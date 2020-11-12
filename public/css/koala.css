@@ -1,0 +1,182 @@
+    .scene .koala {
+      bottom: 150%;
+      transition: none;
+    }
+    .scene[data-dropbear="true"] .koala {
+      bottom: -150%;
+      transition: all linear 5s;
+    }
+    .koala {
+      --koala-color: grey;
+      --koala-head-size: 50px;
+      --koala-head-angle: -30deg;
+      --koala-ear-size: calc(var(--koala-head-size)*0.3);
+      --koala-ear-position-x: -44%;
+      --koala-ear-position-y: -14%;
+      --koala-nose-size: calc(var(--koala-head-size)*0.5);
+      --koala-nose-width: 0.5;
+      --koala-nose-position: 20%;
+      --koala-mouth-size: calc(var(--koala-nose-size)*0.6);
+      --koala-mouth-position: 15%;
+      --koala-mouth-width: calc(var(--koala-head-size)*0.025);
+      --koala-body-height: calc(var(--koala-head-size)*0.9);
+      --koala-body-width: calc(var(--koala-head-size)*0.4);
+      --koala-arm-left-width: calc(var(--koala-head-size)*0.21);
+      --koala-arm-right-width: calc(var(--koala-head-size)*0.17);
+      --koala-arm-right-length: calc(var(--koala-head-size)*0.67);
+      --koala-arm-left-length: calc(var(--koala-head-size)*0.58);
+      --koala-finger-length: calc(var(--koala-head-size)*0.03);
+      --koala-finger-width: calc(var(--koala-head-size)*0.015);
+      --koala-leg-width: calc(var(--koala-head-size)*0.18);
+      --koala-leg-left-length: calc(var(--koala-head-size)*0.34);
+      --koala-leg-right-length: calc(var(--koala-head-size)*0.5);
+      left: 50%;
+      right: 50%;
+      position: fixed;
+      z-index: 1000;
+    }
+    .koala-head {
+      border: 1px solid white;
+      height: var(--koala-head-size);
+      width: var(--koala-head-size);
+      transform: translateX(calc(-0.5 * var(--koala-head-size))) rotate(var(--koala-head-angle));
+      transform-origin: 50% 100%;
+      background: var(--koala-color);
+    }
+    .koala-ear-right, .koala-ear-left {
+      border: var(--koala-ear-size) solid var(--koala-color);
+      height: 0;
+      width: 0;
+      border-radius: 100%;
+      margin: var(--koala-ear-position-y) var(--koala-ear-position-x);
+      z-index: 2;
+    }
+    .koala-ear-right {
+      float: right;
+    }
+    .koala-eye-right, .koala-eye-left {
+      position: absolute;
+      height: 0;
+      width: 0;
+      border: calc(var(--koala-nose-size)/20) solid black;
+      border-radius: 100%;
+      right: 22%;
+      bottom: 60%;
+    }
+    .koala-eye-left {
+      left: 22%;
+      bottom: 60%;
+    }
+    .koala-nose {
+      border: var(--koala-nose-size) solid transparent;
+      border-bottom-color: black;
+      border-radius: 100%;
+      height: 0;
+      width: 0;
+      transform: scale(var(--koala-nose-width), 1);
+      position: absolute;
+      bottom: var(--koala-nose-position);
+      left: calc(var(--koala-head-size)/2 - var(--koala-nose-size));
+    }
+    .koala-mouth {
+      height: 0;
+      width: 0;
+      width: var(--koala-mouth-size);
+      border: var(--koala-mouth-width) solid black;
+      border-right: 0;
+      border-left: 0;
+      position: absolute;
+      bottom: var(--koala-mouth-position);
+      left: calc(var(--koala-head-size)/2 - var(--koala-mouth-size)/2);
+    }
+    .koala-body {
+      background: var(--koala-color);
+      height: var(--koala-body-width);
+      width: var(--koala-body-height);
+      transform: skew(calc(90deg - var(--koala-head-angle)), 0) translateY(calc(-1*var(--koala-head-size)/4));
+      transform-origin: 0 0;
+      border: 1px solid white;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: -2;
+    }
+    .koala-arm-right, .koala-arm-left {
+      background: var(--koala-color);
+      position: absolute;
+      transform: skew(60deg);
+      z-index: -1;
+    }
+    .koala-arm-right {
+      height: var(--koala-arm-right-width);
+      width: var(--koala-arm-right-length);
+      bottom: 0;
+      right: 100%;
+      transform-origin: 100% 100%;
+    }
+    .koala-arm-left {
+      height: var(--koala-arm-left-length);
+      width: var(--koala-arm-left-width);
+      bottom: 100%;
+      left: 0;
+      transform-origin: 0 100%;
+    }
+    .koala-hand-right, .koala-hand-left, .koala-foot {
+      position: absolute;
+      display: flex;
+    }
+    .koala-hand-right {
+      right: 100%;
+      height: 100%;
+      flex-direction: column;
+    }
+    .koala-hand-left {
+      bottom: 100%;
+      width: 100%;
+      flex-direction: row;
+    }
+    .koala-leg-right, .koala-leg-left {
+      height: var(--koala-leg-width);
+      width: var(--koala-leg-right-length);
+      position: absolute;
+      background: var(--koala-color);
+      bottom: 0;
+      left: 100%;
+      transform: skew(60deg);
+      transform-origin: bottom left;
+    }
+    .koala-leg-left {
+      top: 0;
+      width: var(--koala-leg-left-length);
+    }
+    .koala-foot {
+      left: 100%;
+      height: 100%;
+      flex-direction: column;
+    }
+    .koala-finger {
+      border: var(--koala-finger-width) solid black;
+      background: black;
+    }
+    .koala-hand-right .koala-finger {
+      height: 0;
+      width: var(--koala-finger-length);
+      margin: auto 0;
+    }
+    .koala-hand-left .koala-finger {
+      height: var(--koala-finger-length);
+      width: 0;
+      margin: 0 auto;
+    }
+    .koala-foot .koala-finger {
+      height: 0;
+      width: var(--koala-finger-length);
+      margin: auto 0;
+    }
+    #fileElement {
+      position: absolute;
+      visibility: hidden;
+      height: 1;
+      width: 1;
+      top: 0;
+    }

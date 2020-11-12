@@ -1,0 +1,301 @@
+    .ctfpad-radio.mdl-card {
+      background: #3E4EB8;
+    }
+    .ctfpad-radio > .mdl-card__actions {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .ctfpad-radio > .mdl-card__title {
+      align-items: flex-start;
+    }
+    .ctfpad-radio > .mdl-card__title > h4 {
+      margin-top: 0;
+    }
+    .ctfpad-radio > .mdl-card__actions {
+      display: flex;
+      box-sizing:border-box;
+      align-items: center;
+    }
+    .ctfpad-radio > .mdl-card__actions > .material-icons {
+      padding-right: 10px;
+    }
+    .ctfpad-radio * {
+      color: #fff;
+    }
+    .ctfpad-sidebar {
+      min-width: 240px;
+      overflow-x: hidden;
+    }
+    .ctfpad-sidebar .mdl-card {
+      width: 240px;
+      max-width: 240px;
+    }
+    .ctfpad-sidebar .ctfpad-chat .mdl-textfield {
+      max-width: calc(100% - 32px - 10px);
+      width: 100%;
+    }
+    .ctfpad-chat {
+      flex-grow: 1;
+    }
+    .ctfpad-chat-box, .ctfpad-chat-messages {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .ctfpad-chat-filler {
+      flex-grow: 1;
+    }
+    .ctfpad-chat-messages {
+      overflow-y: auto;
+      margin-bottom: 10px;
+      height: 0;
+      flex: 1 1 auto;
+      font-size: 13px;
+      overflow-x: hidden;
+    }
+    .ctfpad-chat-message-container{
+    	margin-left: 1em;
+        overflow-wrap: break-word;
+        margin-top: 1px;
+        white-space: pre-wrap;
+    }
+    .ctfpad-chat-message-container::before {
+    	display: block;
+        content: attr(data-who) ":\00A0";
+        font-size: small;
+        font-weight: bold;
+        text-decoration-line: underline;
+        text-decoration-color: inherit;
+        text-decoration-style: double;
+        border-left-width: 1em;
+        border-left-style: solid;
+        border-left-color: inherit;
+        padding-left: 1px;
+        margin-left: -1em;
+        margin-bottom: 1px;
+    }
+    .ctfpad-chat-message-container:nth-of-type(5n)::before {
+    	display: block!important;
+    }
+    .ctfpad-chat-message-container[data-show-nickname]::before {
+    	display: inline-block!important;
+        content: attr(data-who);
+        margin-right: 1ex;
+    }
+    .ctfpad-chat-message-container:hover::after {
+    	display: block;
+        content: attr(data-who) " " attr(data-where) "@" attr(data-when);
+        font-size: xx-small;
+    }
+    .ctfpad-chat-message-container[data-highlight="true"] {
+      background: lightgoldenrodyellow;
+    }
+    .ctfpad-quote-code {
+      color: darkred;
+      font-family: monospace;
+      outline: 1px solid palegoldenrod;
+      background-color: lightyellow;
+      display: inline-block;
+    }
+    .ctfpad-quote-bold {
+      font-weight: bold;
+    }
+    .ctfpad-quote-italics {
+      font-style: italic;
+    }
+    .ctfpad-quote-strike {
+      text-decoration: line-through;
+    }
+    .ctfpad-chat-input {
+    	max-width: calc(100% - 50px);
+        width: 100%;
+    }
+    .ctfpad-quote-emoji {
+      display: inline-block;
+    }
+    .ctfpad-chat-message-container:not(:hover) .ctfpad-quote-emoji {
+      transform: rotate(90deg);
+      transition: all 0.3s linear 1s;
+      color: black;
+      border: 1px solid #fcc21b;
+      background: #fcc21b;
+      border-radius: 2ex 1ex 1ex 2ex;
+      min-width: 3ex;
+      height: 3ex;
+      white-space: nowrap;
+      vertical-align: middle;
+      text-align: center;
+      font-size: x-small;
+      overflow: hidden;
+      line-height: 3ex;
+      font-weight: bold;
+      font-family: cursive;
+    }
+    .ctfpad-chat-message-container:not(:hover) .ctfpad-quote-emoji[data-hair] {
+    	border-left-color: black;
+        border-left-width: 1ex;
+    }
+    #taskView {
+      width: 100%;
+      height: calc(100vh - 56px);
+      display: flex;
+      flex-direction: column;
+    }
+    #taskView[data-chat-minimize="true"] #taskChatCard {
+      max-height: 60px;
+      min-height: 0;
+    }
+    #taskView[data-chat-minimize="true"] .ctfpad-chat-new {
+      display: none;
+    }
+    #taskView[data-chat-minimize="true"] .ctfpad-chat-box {
+      display: none;
+    }
+    #taskView[data-chat-fullscreen="true"] .firepad {
+    	display: none;
+    }
+    #taskView[data-chat-fullscreen="true"] .ctfpad-fullscreen-on {
+    	display: none;
+    }
+    #taskView[data-chat-fullscreen="false"] .ctfpad-fullscreen-off {
+    	display: none;
+    }
+    .ctfpad-task-alert-menu i {
+    	vertical-align: middle;
+    }
+    #taskView[data-done="true"] .ctfpad-task-view-done {
+      display: none;
+    }
+    #taskView[data-done="false"] .ctfpad-task-view-undo {
+      display: none;
+    }
+    #taskView[data-help="false"] .ctfpad-task-help-yes {
+      display: none;
+    }
+    #taskView[data-help="true"] .ctfpad-task-help-no {
+      display: none;
+    }
+    #taskView[data-almost="false"] .ctfpad-task-almost-yes {
+      display: none;
+    }
+    #taskView[data-almost="true"] .ctfpad-task-almost-no {
+      display: none;
+    }
+    .ctfpad-task-view-pad {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .ctfpad-task-view-pad > div {
+      width: 100%;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      flex: 1 1 100%;
+      display: flex;
+    }
+    #task-firepad {
+      min-height: 100%;
+      width: 100%;
+    }
+    #team-firepad {
+      width: 100%;
+      height: 8em;
+      font-size: 20pt;
+    }
+    a.powered-by-firepad {
+      display: none;
+    }
+    .task-list {
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .ctfpad-task-chip i {
+    	vertical-align: middle;
+        display: none;
+    }
+    .ctfpad-task-chip[data-done="true"] .ctfpad-task-chip-done {
+    	display: inline-block;
+    }
+    .ctfpad-task-chip[data-help="true"] .ctfpad-task-chip-help {
+    	display: inline-block;
+    }
+    .ctfpad-task-chip[data-almost="true"] .ctfpad-task-chip-almost {
+    	display: inline-block;
+    }
+    .ctfpad-task-notification-toggle:checked ~ .ctfpad-task-notification-no {
+    	display: none;
+    }
+    .ctfpad-task-notification-toggle:not(:checked) ~ .ctfpad-task-notification-yes {
+    	display: none;
+    }
+    .ctfpad-team-mates {
+      margin: 0 10px;
+      max-width: calc(100% - 100px);
+      overflow-x: auto;
+      white-space: nowrap;
+      display: flex;
+    }
+    .ctfpad-team-mates::-webkit-scrollbar {
+      	height: 1ex;
+	}
+    .ctfpad-team-mates::-webkit-scrollbar-thumb {
+    	border: 1px solid white;
+	}
+    .ctfpad-mate-chip {
+    	margin: 0 5px;
+        flex: 0 0;
+    }
+    .ctfpad-mate-chip[data-icon="task"] {
+    	order: 1;
+    }
+    .ctfpad-mate-chip[data-icon="away"] {
+    	order: 2;
+    }
+    .ctfpad-mate-chip[data-icon="online"][data-radio="true"] {
+    	order: 1;
+    }
+    .ctfpad-mate-chip[data-icon="online"][data-radio="false"] {
+    	order: 2;
+    }
+    .ctfpad-mate-chip-icon {
+    	display: none;
+        vertical-align: text-bottom;
+        color: white;
+        text-shadow: 0 0 3px black;
+    }
+    .ctfpad-mate-chip[data-icon="online"][data-radio="true"] .ctfpad-mate-mic, .ctfpad-mate-chip[data-icon="online"][data-radio="false"] .ctfpad-mate-pen, .ctfpad-mate-chip[data-icon="task"] .ctfpad-mate-task, .ctfpad-mate-chip[data-icon="away"] .ctfpad-mate-away {
+    	display: inline;
+    }
+    .ctfpad-radio-buttons {
+      width: 100%;
+      margin: auto;
+      align-items: center;
+    }
+    #radioOn[data-muted="true"] .speaking {
+    	display: none;
+    }
+    #radioOn:not([data-muted="true"]) .muted {
+    	display: none;
+    }
+    .demo-card-square.mdl-card {
+      min-width: 100px;
+      min-height: 200px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 200px;
+      margin: 10px;
+    }
+    .demo-card-square > .mdl-card__title {
+      color: #fff;
+      background: #46B6AC;
+    }
+    .ctfpad-add-task {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 20px;
+      z-index: 100;
+    }
+    #loading {display: none;width: 100%;}
+    body[data-loading="true"] #loading {display: block;}
+    body[data-loading="true"] #loaded {display: none;}
