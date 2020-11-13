@@ -1,6 +1,4 @@
 ONLY_GCS = true;
-firebase.initializeApp(config);
-
 function initPad(username) {
     var firepadRef = firebase.database().ref();
     var urlParams = new URLSearchParams(location.hash.slice(1));
